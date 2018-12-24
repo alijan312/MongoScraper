@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const exphbs = require("express-handlebars");
+require('dotenv').config();
 
 // Require models
 const db = require('./models');
@@ -12,7 +13,7 @@ const db = require('./models');
 // Initialize express
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Configure middleware
 app.use(logger('dev'));
