@@ -31,9 +31,11 @@ app.set("view engine", "handlebars");
 app.use(express.static('public'));
 
 // Connect to the MongoDB database
-mongoose.connect('mongodb://localhost/webscraper', {
-    useNewUrlParser: true
-});
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/webscraper';
+mongoose.connect(MONGODB_URI);
+// mongoose.connect('mongodb://localhost/webscraper', {
+//     useNewUrlParser: true
+// });
 
 app.get('/', function (req, res) {
     axios.get('https://www.nytimes.com/').then(function (response) {
