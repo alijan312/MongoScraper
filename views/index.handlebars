@@ -1,13 +1,16 @@
 <div class="container">
+  {{#each article}}
   <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{summary}}</p>
+          <a href="{{link}}" target='_blank' class="btn btn-primary">Read the Article</a>
+          <button type="button" class="btn btn-secondary">Add notes</button>
+        </div>
+      </div>
     </div>
   </div>
+  {{/each}}
 </div>
